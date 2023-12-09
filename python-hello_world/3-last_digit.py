@@ -6,12 +6,13 @@ if Lastdigit > 5:
     result = "{} {} is {} and {}".format("Last digit of",number,Lastdigit, "is greater than 5"  )
     print(result)
 elif Lastdigit == 0:
-    result = "{}  {} is {} and {}".format("last digit of",number,Lastdigit, "is 0"  )
+    result = "{}  {} is {} and {}".format("Last digit of",number,Lastdigit, "is 0"  )
     print(result)
-elif Lastdigit < 6 and not 0 and number >0:
-    result = "{}  {} is {} and {}".format("last digit of",number,Lastdigit, "is less than 6 and not 0"  )
-    print(result)
+
 if  number < 0 and Lastdigit !=0:
     Lastdigit = Lastdigit *-1
-    result = "{}  {} is {} and {}".format("last digit of",number,Lastdigit, "is less than 6 and not 0"  )
+    result = "{}  {} is {} and {}".format("Last digit of",number,Lastdigit, "is less than 6 and not 0"  )
+    print(result)
+elif Lastdigit < 6 and not 0 and number >0:
+    result = "{}  {} is {} and {}".format("Last digit of",number,Lastdigit, "is less than 6 and not 0"  )
     print(result)
