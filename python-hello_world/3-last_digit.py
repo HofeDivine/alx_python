@@ -12,6 +12,6 @@ elif Lastdigit == 0:
 
 if  number<0 and Lastdigit!= 0:
     Lastdigit *= -1
-    result = "{}  {} is {} and {}".format("Last digit of",number,Lastdigit, "is less than 6 and not 0"  )
+    result = "{} {} is {} and {}".format("Last digit of",number,Lastdigit, "is less than 6 and not 0"  )
     print(result)
 
