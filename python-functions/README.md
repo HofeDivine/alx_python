@@ -1,0 +1,1 @@
+Python is a simple and a nice language, lets look at functions
