@@ -6,10 +6,10 @@ if __name__ == "__main__":
         print("{} arguments.".format(lengthy))
     elif lengthy == 1:
       print("{} argument:".format(lengthy))
-      print("{}: {} ".format(lengthy,argv[1] ))
+      print("{}: {}".format(lengthy,argv[1] ))
     else :
        print("{} arguments:".format(lengthy))
        for i in range(lengthy):
-         print("{}: {} ".format(i+1,argv[i+1] ))
+         print("{}: {}".format(i+1,argv[i+1] ))
     
        
