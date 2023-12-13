@@ -1,6 +1,5 @@
 a = 1
 b = 2
-import add_0
-if __name__ == "__main__":
- 
- print("{} + {} = {}".format(1,2,(1+2)))
+
+from add_0 import add
+print("{} + {} = {}".format(a, b, add(a, b)))
