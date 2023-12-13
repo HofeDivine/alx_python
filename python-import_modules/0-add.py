@@ -1,9 +1,9 @@
 
 import add_0
-
+a=1
+b=2
 if __name__ == "__main__":
- a=1
- b=2
+ 
  def add(a,b):
  
   return a+b
