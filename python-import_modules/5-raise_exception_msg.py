@@ -1,2 +1,2 @@
-def raise_exception_msg(message = "Python is fun"):
-     raise NameError("python is fun")
+def raise_exception_msg(message = "C is fun"):
+     raise NameError("C is fun")
