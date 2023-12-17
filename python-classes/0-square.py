@@ -11,17 +11,6 @@ class Square:
         :param size: The size of the square.
         """
         self.__size = size
-    def get_size(self):
-        """
-        a function to get the private instance size
-        :return: The size of the square.
-        """
-        return self.__size
-    def set_size(self,size):
-        """
-        a method that allows us to set a new size of our private instance of the class square
-        :param size: The new size to set.
-        """
-        self.__size = size
+  
 
         
