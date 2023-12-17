@@ -15,6 +15,7 @@ class Square:
     def area(self):
         square_area = self.__size**2
         return square_area
+    @property
     def size(self):
         """
         A getter property to get the private instance size
@@ -22,7 +23,7 @@ class Square:
         """
         return self.__size
 
-    
+    @size.setter
     def size(self, value):
         """
         A setter property that allows us to set a new size of our private instance of the class square
