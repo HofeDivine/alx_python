@@ -10,4 +10,4 @@ def inherits_from(obj, a_class):
     for base in type(obj).__bases__:
         if base is a_class or inherits_from(base,a_class):
             return True
-    return False
+        return False
