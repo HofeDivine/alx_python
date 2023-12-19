@@ -1,6 +1,7 @@
 """
-    Empty class
+Empty class
 """
+
 class BaseGeometry:
     """
     Empty class
