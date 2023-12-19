@@ -1,3 +1,6 @@
+"""
+BaseGeometry class with a public instance method area().
+"""
 class BaseGeometry:
     """
     BaseGeometry class with a public instance method area().
