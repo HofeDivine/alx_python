@@ -1,7 +1,7 @@
 """
 BaseGeometry class with a public instance method area().
 """
-from collections.abc import Iterable
+
 
 
 class MetaClass(type):
