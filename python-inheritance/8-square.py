@@ -64,15 +64,6 @@ class Square(Rectangle):
     
     def __init__(self, size):
         super().__init__(size,size)
-    def integer_validator(self, size, value):
-        """
-        Public instance method that validates an integer value.
-        Raises a TypeError if the value is not an integer.
-        Raises a ValueError if the value is less than or equal to 0.
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(size))
-        if value <=0:
-            raise ValueError("{} must be greater than 0".format(size))
+        self.integer_validator("size", size)
     
         
