@@ -31,8 +31,9 @@ class Rectangle(Base):
         this in the construstor of the base class
         it has id as an instance attributes
         """
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
-        super().__init__(id)
+        
