@@ -17,4 +17,20 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
-        
+    def get__width(self) :
+        return self.__width 
+    def get__height(self) :
+        return self.__height 
+    def get__x(self) :
+        return self.__x 
+    def get__y(self) :
+        return self.__y 
+    def set__width(self) :
+        return self.__width 
+    def set__height(self) :
+        return self.__height 
+    def set__x(self) :
+        return self.__x 
+    def set__y(self) :
+        return self.__y 
+    
