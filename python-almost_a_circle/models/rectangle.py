@@ -18,19 +18,33 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
     def get__width(self) :
+        """
+        this is the getter for the attribute width"""
         return self.__width 
     def get__height(self) :
+        
+        """
+        this is the getter for the attribute height"""
         return self.__height 
     def get__x(self) :
+        """
+        this is the getter for the attribute x"""
         return self.__x 
     def get__y(self) :
+        """
+        this is the getter for the attribute y"""
         return self.__y 
     def set__width(self) :
+        """this wis the setter for the attribute width"""
         return self.__width 
     def set__height(self) :
+        """this wis the setter for the attribute height"""
         return self.__height 
     def set__x(self) :
+        
+        """this wis the setter for the attribute x"""
         return self.__x 
     def set__y(self) :
+        """this wis the setter for the attribute y"""
         return self.__y 
     
