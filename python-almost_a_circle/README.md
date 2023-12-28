@@ -1,0 +1,1 @@
+ok, lets explore python almost a python
