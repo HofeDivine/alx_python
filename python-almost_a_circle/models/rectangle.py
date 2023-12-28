@@ -21,29 +21,32 @@ class Rectangle(Base):
         """
         this is the getter for the attribute width"""
         return self.__width 
+    
+    def set_width(self,width) :
+        
+        """this wis the setter for the attribute x"""
+        self.__width = width 
     def get_height(self) :
         
         """
         this is the getter for the attribute height"""
-        return self.__height 
+        return self.__height
+    def set__height(self,height) :
+        """this wis the setter for the attribute height"""
+        self.__height = height 
     def get_x(self) :
         """
         this is the getter for the attribute x"""
         return self.__x 
+    def set_x(self,x) :
+        
+        """this wis the setter for the attribute x"""
+        self.__x = x
     def get_y(self) :
         """
         this is the getter for the attribute y"""
         return self.__y 
-    def set_width(self,width) :
-        """this wis the setter for the attribute width"""
-        self.__width = width 
-    def set__height(self,height) :
-        """this wis the setter for the attribute height"""
-        self.__height = height
-    def set_x(self,x) :
-        
-        """this wis the setter for the attribute x"""
-        return self.__x 
+    
     def set_y(self,y) :
         """this wis the setter for the attribute y"""
         self.__y = y 
