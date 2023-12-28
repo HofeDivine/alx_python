@@ -31,7 +31,7 @@ class Rectangle(Base):
         """
         this is the getter for the attribute height"""
         return self.__height
-    def set__height(self,height) :
+    def set_height(self,height) :
         """this wis the setter for the attribute height"""
         self.__height = height 
     def get_x(self) :
