@@ -111,7 +111,7 @@ class Rectangle(Base):
             print("")
         for _ in range(self.height):
          print(" "*self.x + "#"*self.width)
-    def update(self, *args):
+    def update(self, *args, **kwargs):
        """
        Update the class Rectangle by adding the public method def update(self, *args)""" 
        if len(args) >=1:
