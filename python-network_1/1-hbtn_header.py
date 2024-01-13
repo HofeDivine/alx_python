@@ -14,7 +14,7 @@ def get_x_request_id(url):
             x_request_id = response.headers.get('X-Request-Id')
 
             if x_request_id:
-                print(f"The value of X-Request-Id is: {x_request_id}")
+                print(f" {x_request_id}")
             else:
                 print("X-Request-Id header not found in the response.")
         else:
