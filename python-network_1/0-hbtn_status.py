@@ -1,6 +1,11 @@
+"""
+Python script that fetches https://alu-intranet.hbtn.io/status
+"""
 import requests
 
 def fetch_and_display_status(url):
+   
+    """Python script that fetches https://alu-intranet.hbtn.io/status"""
     try:
         # Send a GET request to the specified URL
         response = requests.get(url)
