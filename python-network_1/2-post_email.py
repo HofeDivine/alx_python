@@ -6,13 +6,10 @@ import sys
 
 def send_post_request(url, email):
     try:
-        # Data to be sent in the POST request
+        
         data = {'email': email}
-
-        # Send a POST request to the specified URL with the email parameter
         response = requests.post(url, data=data)
 
-        # Display the body of the response
         print("Response body:")
         print(response.text)
 
@@ -20,9 +17,13 @@ def send_post_request(url, email):
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    # Prompt user for URL and email
-    url = input("Enter the URL: ")
-    email = input("Enter the email address: ")
+    
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <URL> <email>")
+        sys.exit(1)
 
-    # Call the function to send the POST request and display the response
+    
+    url = sys.argv[1]
+    email = sys.argv[2]
+
     send_post_request(url, email)
