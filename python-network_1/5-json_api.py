@@ -7,8 +7,9 @@ def post_email(q):
     url = "http://0.0.0.0:5000/search_user"
     response = requests.post(url,q)
     if response.headers['content-type'] =='application/json' and response.json():
-        user_id = response.json.get('id')
-        user_name = response.json.get('name')
+        user_data = response.json
+        user_id = user_data.get('id')
+        user_name = user_data.get('name')
         print("[{}] {}".format(user_id,user_name))
     elif not response.json:
         print("No result")
