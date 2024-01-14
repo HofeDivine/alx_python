@@ -5,7 +5,7 @@ import requests
 import sys
 def error_code(url):
     response = requests.get(url)
-    status_code = response.status_codes
+    status_code = response.status_code
     if status_code <400:
         print(response.text)
     else:
