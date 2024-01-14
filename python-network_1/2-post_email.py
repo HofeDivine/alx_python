@@ -10,7 +10,7 @@ def send_post_request(url, email):
         data = {'email': email}
         response = requests.post(url, data=data)
 
-        print("Response body:")
+
         print(response.text)
 
     except Exception as e:
