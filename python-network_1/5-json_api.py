@@ -11,7 +11,7 @@ def post_email(q):
         user_id = user_data.get('id')
         user_name = user_data.get('name')
         print("[{}] {}".format(user_id,user_name))
-    elif not response.json:
+    elif not response.json():
         print("No result")
     else:
         print("Not a valid JSON")
