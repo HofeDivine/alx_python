@@ -7,29 +7,42 @@ Python script that takes in a letter and sends a POST request to http://0.0.0.0:
 import requests
 import sys
 
-def post_email(q):
-    url = "http://0.0.0.0:5000/search_user"
-    data = {'q': q}
-    
+def search_user(letter):
     try:
+        
+        url = "http://0.0.0.0:5000/search_user"
+
+        
+        data = {'q': letter}
+
+        
         response = requests.post(url, data=data)
-        response_json = response.json()
 
-        if response.headers['content-type'] == 'application/json' and response_json:
-            user_id = response_json.get('id')
-            user_name = response_json.get('name')
+    
+        if response.headers['content-type'] == 'application/json' and response.json():
+            user_data = response.json()
+            user_id = user_data.get('id')
+            user_name = user_data.get('name')
+
+            
             print("[{}] {}".format(user_id, user_name))
-        elif not response_json:
-            print("No result")
         else:
-            print("Not a valid JSON")
+            
+            if not response.json():
+                print("No result")
+            else:
+                print("Not a valid JSON")
 
-    except requests.exceptions.JSONDecodeError:
-        print("Not a valid JSON")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit(1)
+    
+    if len(sys.argv) == 2:
+        letter = sys.argv[1]
+    else:
+        
+        letter = ""
 
-    q = sys.argv[1]
-    post_email(q)
+    
+    search_user(letter)
