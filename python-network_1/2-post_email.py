@@ -14,7 +14,7 @@ def send_post_request(url, email):
 
         # Display the body of the response
         print("Response body:")
-        print(response.text)
+        print(response)
 
     except Exception as e:
         print(f"An error occurred: {e}")
