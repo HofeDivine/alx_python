@@ -5,7 +5,8 @@ import requests
 import sys
 def post_email(q):
     url = "http://0.0.0.0:5000/search_user"
-    response = requests.post(url,q)
+    data = {'q',q}
+    response = requests.post(url,data)
     if response.headers['content-type'] =='application/json' and response.json():
         user_data = response.json
         user_id = user_data.get('id')
