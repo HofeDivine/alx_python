@@ -18,7 +18,9 @@ def get_github_user_id(username, password):
         user_data = response.json()
         
         
-        print("Your GitHub user ID: {}".format(user_data['id']))
+        print("{}".format(user_data['id']))
+    else:
+        return None
     
 
 if __name__ == "__main__":
