@@ -20,7 +20,7 @@ def get_github_user_id(username, password):
         
         print("{}".format(user_data['id']))
     else:
-        return None
+        print("None")
     
 
 if __name__ == "__main__":
