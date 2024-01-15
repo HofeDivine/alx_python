@@ -15,15 +15,16 @@ def search_user(letter):
         print("Raw Response Content:", response.content)
 
         if response.headers['content-type'] == 'application/json':
-           try:
-               user_data = response.json()
-               user_id = user_data.get('id')
-               user_name = user_data.get('name')
-               print("[{}] {}".format(user_id, user_name))
-           except json.JSONDecodeError:
-              print("Not a valid JSON")
-        elif not response.text.strip():
-             print("No result")
+            try:
+                user_data = response.json()
+                if user_data:  # Check if the JSON is not empty
+                        user_id = user_data.get('id')
+                        user_name = user_data.get('name')
+                        print("[{}] {}".format(user_id, user_name))
+                else:
+                    print("No result")
+            except json.JSONDecodeError:
+                print("Not a valid JSON")
         else:
             print("Not a valid JSON")
 
