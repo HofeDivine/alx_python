@@ -33,8 +33,7 @@ def search_user(letter):
             else:
                 print("Not a valid JSON")
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    
 
 if __name__ == "__main__":
     
