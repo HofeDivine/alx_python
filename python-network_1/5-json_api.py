@@ -23,7 +23,7 @@ def search_user(letter):
            except json.JSONDecodeError:
               print("Not a valid JSON")
         elif not response.text.strip():
-            print("No result")
+             print("No result")
         else:
             print("Not a valid JSON")
 
