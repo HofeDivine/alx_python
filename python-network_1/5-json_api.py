@@ -11,8 +11,6 @@ def search_user(letter):
         data = {'q': letter}
         response = requests.post(url, data=data)
 
-        # Print raw response content for debugging
-        print("Raw Response Content:", response.content)
 
         if response.headers['content-type'] == 'application/json':
             try:
