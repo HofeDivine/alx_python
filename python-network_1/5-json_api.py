@@ -14,16 +14,19 @@ def search_user(letter):
         # Print raw response content for debugging
         print("Raw Response Content:", response.content)
 
-        if response.headers['content-type'] == 'application/json' and response.json():
-            user_data = response.json()
-            user_id = user_data.get('id')
-            user_name = user_data.get('name')
-            print("[{}] {}".format(user_id, user_name))
+        if response.headers['content-type'] == 'application/json':
+           try:
+               user_data = response.json()
+               user_id = user_data.get('id')
+               user_name = user_data.get('name')
+               print("[{}] {}".format(user_id, user_name))
+           except json.JSONDecodeError:
+              print("Not a valid JSON")
+        elif not response.text.strip():
+            print("No result")
         else:
-            if not response.json():
-                print("No result")
-            else:
-                print("Not a valid JSON")
+            print("Not a valid JSON")
+
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -34,5 +37,5 @@ if __name__ == "__main__":
     else:
         letter = ""
 
-    # Call the function to send the POST request and display the response
+    
     search_user(letter)
