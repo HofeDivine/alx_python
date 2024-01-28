@@ -10,7 +10,7 @@ def lists_states(username,password, database_name):
     """
     my_connect = MySQLdb.connect(host="localhost",user=username,port=3306,passwd=password,db=database_name)
     cursor= my_connect.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASCI")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
     data_selected = cursor.fetchall()
     for row in data_selected:
         print(row)
