@@ -19,7 +19,7 @@ def list_N_states(username,password,database):
     cursor1.close
     myconnect.close
 
-if __name__ == "main":
+if __name__ == "__main__":
         if len(sys.argv) != 4:
             sys.exit(1)
         username = sys.argv[1]
