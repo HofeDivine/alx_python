@@ -15,12 +15,8 @@ def list_N_states(username,password,database):
     cursor1.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     myrows = cursor1.fetchall()
     for rows in myrows:
-         if len(myrows) == 1:
-        
-            print(myrows[0])
-         else:
-            states_id ,states_name = myrows
-            print(states_id,states_name)
+         
+            print(rows)
     cursor1.close
     myconnect.close
 
