@@ -9,7 +9,7 @@ def list_states_Name(username,password,database,state_name_searched):
     """
     myconnect = MySQLdb.connect(host ="localhost",port = 3306,user =username,passwd =password,database=database)
     cursor = myconnect.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = '{}'ORDER BY id ASC".format(state_name_searched))
+    cursor.execute("SELECT * FROM states WHERE BINARY name = '{}'ORDER BY id ASC".format(state_name_searched))
     myrows = cursor.fetchall()
     for rows in myrows:
         print(rows)
