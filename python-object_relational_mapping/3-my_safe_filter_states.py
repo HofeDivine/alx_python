@@ -6,7 +6,7 @@ def display_state_nameI(username,password,database,state_name_searched):
     """
     this the fuction that retrieve the values of states from a given database
     """
-    myconnect = MySQLdb.connect(host = "localhost", port = 3306,user= username,passwd=password,database=database)
+    myconnect = MySQLdb.connect(host = "localhost", port = 3306,user= username,passwd=password,db=database)
     cursor = myconnect.cursor()
     querry = " SELECT * FROM states WHERE BINARY name = '{}'ORDER BY id ASC".format(state_name_searched)
     cursor.execute(querry)
