@@ -10,10 +10,10 @@ def list_N_states(username,password,database):
     A function that list the states starting with N
     It uses .connect() method of MYSQLdb module to connect python script to mysql
     """
-    myconnect = MySQLdb.connect(host = "localhost",port =3306,user =username,passwd =password,database =database)
+    myconnect = MySQLdb.connect(host ="localhost",port =3306,user =username,passwd =password,database =database)
     cursor1 = myconnect.cursor()
-    cursor1.execute("SELECT * FROM states LIKE 'N%' ORDER BY id ASC")
-    myrows = cursor1.fetchall
+    cursor1.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    myrows = cursor1.fetchall()
     for rows in myrows:
         print(myrows)
     cursor1.close
