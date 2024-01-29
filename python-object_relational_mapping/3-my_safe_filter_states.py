@@ -13,8 +13,8 @@ def display_state_nameI(username,password,database,state_name_searched):
     myrows = cursor.fetchall()
     for row in myrows:
         print(row)
-        cursor.close
-        myconnect.close
+        cursor.close()
+        myconnect.close()
 
 if __name__ == "__main__":
     if len(sys.argv)!= 5:
