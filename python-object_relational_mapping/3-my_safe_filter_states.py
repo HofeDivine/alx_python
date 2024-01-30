@@ -9,7 +9,7 @@ def display_state_nameI(username,password,database,state_name_searched):
     myconnect = MySQLdb.connect(host = "localhost", port = 3306,user= username,passwd=password,db=database)
     cursor = myconnect.cursor()
     querry = " SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC"
-    cursor.execute(querry,(state_name_searched))
+    cursor.execute(querry,(state_name_searched,))
     myrows = cursor.fetchall()
     for row in myrows:
         print(row)
