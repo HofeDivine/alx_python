@@ -9,7 +9,12 @@ def list_cities(username,password,database):
     """
     myconnect = MySQLdb.connect(host ="localhost",port =3306,user =username,passwd=password,db=database)
     cursor = myconnect.cursor()
-    cursor.execute("SELECT * FROM cities ORDER BY id ASC")
+    cursor.execute("""
+            SELECT cities.id, cities.name, states.name
+            FROM cities
+            INNER JOIN states ON cities.state_id = states.id
+            ORDER BY cities.id ASC
+        """)
     myrows = cursor.fetchall()
     for row in myrows:
         print(row)
