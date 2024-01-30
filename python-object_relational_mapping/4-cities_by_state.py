@@ -7,7 +7,7 @@ def list_cities(username,password,database):
     """
     This function retrieves a list of all cities in a database
     """
-    myconnect = MySQLdb.connect(host ="localhost",port =3306,user =database,passwd=password,db=database)
+    myconnect = MySQLdb.connect(host ="localhost",port =3306,user =username,passwd=password,db=database)
     cursor = myconnect.cursor()
     cursor.execute("SELECT * FROM cities ORDER BY id ASC")
     myrows = cursor.fetchall()
