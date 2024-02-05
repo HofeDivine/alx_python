@@ -14,7 +14,7 @@ def all_cities(username,password,database,state_name):
                 FROM cities
                 JOIN states ON cities.state_id = states.id
                 WHERE states.name = %s
-                ORDER BY Cities.id ASC
+                ORDER BY cities.id ASC
 
                 """
     cursor.execute(querry,(state_name,))
