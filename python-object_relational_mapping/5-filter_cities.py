@@ -19,8 +19,8 @@ def all_cities(username,password,database,state_name):
                 """
     cursor.execute(querry,(state_name,))
     myrows = cursor.fetchall()
-    for rows in myrows:
-        print(rows[0])
+    city_names = ", ".join(row[0] for row in myrows)
+    print(city_names)
     cursor.close()
     connection.close()
 if __name__ == "__main__":
