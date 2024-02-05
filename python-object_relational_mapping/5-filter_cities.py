@@ -20,7 +20,7 @@ def all_cities(username,password,database,state_name):
     cursor.execute(querry,(state_name,))
     myrows = cursor.fetchall()
     for rows in myrows:
-        print(rows)
+        print(rows[0])
     cursor.close()
     connection.close()
 if __name__ == "__main__":
