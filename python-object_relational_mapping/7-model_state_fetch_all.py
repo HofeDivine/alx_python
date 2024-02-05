@@ -4,14 +4,14 @@ a script that lists all State objects from the database hbtn_0e_6_usa
 """
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orn import sessionmaker
+from sqlalchemy.orm import sessionmaker
 from model_state import Base,State
 def all_states(username,password,database):
     """
     a function that lists all State objects from the database hbtn_0e_6_usa
 
     """
-    path = "mysql://username:password@localhost:3306/database"
+    path = "mysql://{}:{}@localhost:3306/{}".format(username,password,database)
     engine = create_engine(path)
     Session = sessionmaker(bind=engine)
     session = Session()
