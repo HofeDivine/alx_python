@@ -11,7 +11,7 @@ def first_states(username,password,database):
     a script that prints the first State object from the 
     database hbtn_0e_6_usa
     """
-    path = "myqsl://{}:{}@localhost:3306/{}".format(username,password,database)
+    path = "mysql://{}:{}@localhost:3306/{}".format(username,password,database)
     engine = create_engine(path)
     Session = sessionmaker(bind=engine)
     session = Session()
