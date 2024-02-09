@@ -15,8 +15,8 @@ def Hhello():
 @app.route('/c/<text>')
 def displayC(text):
      return 'C {}'.format(text.replace('_', ' '))
-@app.route('/python/<text>')
 @app.route('/python')
+@app.route('/python/<text>')
 def displayPy(text="is cool"):
     return 'Python {}'.format(text.replace('_', ' '))
 
