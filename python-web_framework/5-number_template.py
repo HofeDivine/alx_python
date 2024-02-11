@@ -20,9 +20,8 @@ def Hhello():
 @app.route('/c/<text>', strict_slashes=False)
 def displayC(text):
     return 'C {}'.format(text.replace('_', ' '))
-
-@app.route('/python/<text>', strict_slashes=False)
 @app.route('/python', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
 def displayPy(text="is cool"):
     return 'Python {}'.format(text.replace('_', ' '))
 
