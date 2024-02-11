@@ -1,3 +1,10 @@
+
+"""
+ a new script that starts a Flask web application:
+
+Your web application must be listening on 0.0.0.0, port 5000
+
+"""
 from flask import Flask, render_template
 
 app = Flask(__name__)
