@@ -33,6 +33,11 @@ def displayNumber(n):
 def displayNumberTemplate(n):
     if isinstance(n, int):
         return render_template('5-number.html', n=n)
+def number_odd_or_even(n):
+    if n % 2 == 0:
+        return render_template('number_odd_or_even.html', number=n, parity='even')
+    else:
+        return render_template('number_odd_or_even.html', number=n, parity='odd')
     
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
