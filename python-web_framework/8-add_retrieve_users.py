@@ -63,7 +63,7 @@ def show_users():
     users = User.query.all()
 
     
-    return render_template('8-users.html', users=users)
+    return render_template('users.html', users=users)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
