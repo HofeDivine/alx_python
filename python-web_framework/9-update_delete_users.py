@@ -124,7 +124,6 @@ def delete_user(user_id):
     else:
 
         flash("User not found.", "error")
-    
     return redirect(url_for('index'))
 
 
