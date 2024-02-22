@@ -113,18 +113,20 @@ def delete_user(user_id):
     user = User.query.get(user_id)
     
     
-    if user:
-        try:
-            db.session.delete(user)
-            db.session.commit()
-            flash("User deleted successfully!", "success")
-        except Exception as e:
-            db.session.rollback()
-            flash(f"Error deleting user: {str(e)}", "error")
-    else:
+    from flask import render_template
 
+@app.route('/delete_user/<int:user_id>', methods=['GET'])
+def delete_user(user_id):
+    # Retrieve the user from the database based on user_id
+    user = User.query.get(user_id)
+    
+    # Check if the user exists
+    if user:
+        return render_template('delete_user.html', user=user)
+    else:
         flash("User not found.", "error")
-    return redirect(url_for('index'))
+        return redirect(url_for('index'))
+
 
 
 
