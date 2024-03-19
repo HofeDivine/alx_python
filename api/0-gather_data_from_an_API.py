@@ -19,6 +19,4 @@ def get_employee_info(employee_id):
         if task['completed']:
             print(f"\t{task['title']}")
 
-# Example usage:
-employee_id = int(input("Enter employee ID: "))
-get_employee_info(employee_id)
+
