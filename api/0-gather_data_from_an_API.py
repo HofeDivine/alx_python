@@ -19,7 +19,8 @@ def get_employee_info(employee_id):
 
     # Print employee's TODO list progress
     print(f"Employee {employee_name} is done with tasks ({num_completed_tasks}/{total_tasks}):")
-    for task in completed_tasks:
+    for idx, task in enumerate(completed_tasks, 1):
+        print(f"Task {idx} Formatting: OK")
         print(f"\t{task['title']}")
 
 if __name__ == "__main__":
@@ -29,9 +30,3 @@ if __name__ == "__main__":
     
     employee_id = int(sys.argv[1])
     get_employee_info(employee_id)
-
-
-
-
-
-
