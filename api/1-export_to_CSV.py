@@ -1,32 +1,36 @@
-import sys
-import requests
+"""import json, requests, sys"""
+
 import csv
+import requests
+import sys
 
-def export_tasks_to_csv(employee_id):
-    # Fetch employee details
-    user_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
-    user_data = user_response.json()
-    user_id = user_data['id']
-    username = user_data['username']
+"""import json, requests, sys"""
 
-    # Fetch employee's TODO list
-    todo_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
-    todo_data = todo_response.json()
 
-    # Write data to CSV file
-    csv_filename = f"{user_id}.csv"
-    with open(csv_filename, mode='w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
-        for task in todo_data:
-            writer.writerow([user_id, username, task['completed'], task['title']])
-    print(f"Number of tasks in CSV: {len(todo_data)}")
-    print(f"Correct user ID and username retrieved: OK")
+def getInfo(id):
+    """
+    Get data from json api and export to json file
+    """
+    url = "https://jsonplaceholder.typicode.com/users/{}".format(id)
+    todourl = "{}/todos".format(url)
+
+    request1 = requests.get(url)
+    result = request1.json()
+    userid = result["id"]
+    username = result["username"]
+
+    request2 = requests.get(todourl)
+    tasks = request2.json()
+
+    with open("{}.csv".format(userid), "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        for task in tasks:
+            writer.writerow([userid, username, task["completed"], task["title"]])
+
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py [employee_id]")
-        sys.exit(1)
-    
-    employee_id = int(sys.argv[1])
-    export_tasks_to_csv(employee_id)
+    if len(sys.argv) > 1:
+        id = sys.argv[1]
+    else:
+        id = 1
+    getInfo(str(id))
