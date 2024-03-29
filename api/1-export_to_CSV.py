@@ -22,7 +22,7 @@ def get_employee_info(employee_id):
         writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
         for task in todo_data:
             writer.writerow([user_id, username, task['completed'], task['title']])
-    print(f"CSV file '{csv_filename}' has been created.")
+    print(f"Number of tasks in CSV: {len(todo_data)}")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
