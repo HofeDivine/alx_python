@@ -7,14 +7,14 @@ import sys
 """import json, requests, sys"""
 
 
-def getInfo(id):
+def getData(id):
     """
     Get data from json api and export to json file
     """
-    url = "https://jsonplaceholder.typicode.com/users/{}".format(id)
-    todourl = "{}/todos".format(url)
+    usersurl = "https://jsonplaceholder.typicode.com/users/{}".format(id)
+    todourl = "{}/todos".format(usersurl)
 
-    request1 = requests.get(url)
+    request1 = requests.get(usersurl)
     result = request1.json()
     userid = result["id"]
     username = result["username"]
@@ -33,4 +33,4 @@ if __name__ == "__main__":
         id = sys.argv[1]
     else:
         id = 1
-    getInfo(str(id))
+    getData(str(id))
