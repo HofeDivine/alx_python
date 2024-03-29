@@ -1,4 +1,4 @@
-
+"""imports"""
 
 import json
 import requests
@@ -7,6 +7,7 @@ import sys
 
 
 def getInfo(id):
+    """sending a request to url"""
     url = "https://jsonplaceholder.typicode.com/users/{}".format(id)
     todourl = "{}/todos".format(url)
 
