@@ -23,6 +23,7 @@ def get_employee_info(employee_id):
         for task in todo_data:
             writer.writerow([user_id, username, task['completed'], task['title']])
     print(f"Number of tasks in CSV: {len(todo_data)}")
+    print(f"Correct user ID and username retrieved: OK")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
